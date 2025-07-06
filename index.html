@@ -351,8 +351,9 @@
     <!-- Main Content -->
     <main>
         <!-- Video Section -->
-        <video id="myVideo" autoplay muted loop onclick="this.play()" aria-label="Foundation promotional video" controls>
+        <video id="myVideo" muted loop onclick="this.play()" aria-label="Foundation promotional video" controls poster="Systems_Image/pexels-photo-3184438.jpeg" preload="metadata">
             <source src="Systems_MP4/BKGRDVDO_small.mp4" type="video/mp4">
+            <source src="Systems_MP4/BKGRDVDO_small.mp4" type="video/webm">
             Your browser does not support the video tag.
         </video>
 
@@ -370,5 +371,31 @@
             </div>
         </section>
     </main>
+
+    <script>
+        // Enhanced video controls for social media compatibility
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('myVideo');
+            
+            // Try to autoplay on desktop, but gracefully fail on mobile/social
+            video.addEventListener('loadedmetadata', function() {
+                // Only try autoplay if not on mobile/social media browsers
+                if (!navigator.userAgent.match(/Mobile|Android|iPhone|iPad|Facebook|Instagram|Twitter/i)) {
+                    video.play().catch(function() {
+                        console.log('Autoplay prevented - user interaction required');
+                    });
+                }
+            });
+            
+            // Ensure video plays on click
+            video.addEventListener('click', function() {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
