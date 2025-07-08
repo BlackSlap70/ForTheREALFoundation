@@ -164,31 +164,57 @@
         .image-section {
             margin-top: 20px;
             margin-bottom: 50px;
-            padding-left: 30px;
+            padding-left: 0px;
             display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
-            -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-            flex-direction: column;
+            -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
             -webkit-align-items: flex-start;
             -ms-flex-align: start;
             align-items: flex-start;
+            gap: 20px;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
         }
 
         .content-image {
-            width: 100%;
+            width: auto;
             height: auto;
             max-width: 250px;
             -o-object-fit: contain;
             object-fit: contain;
             display: block;
             border: 2px solid #FFD700;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .image-text {
-            max-width: 400px;
+            max-width: 600px;
+            flex: 1;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .story-text {
+            color: black;
+            font-size: 1em;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .story-text + .story-text {
+            margin-top: 15px;
         }
 
         .image-name {
@@ -211,6 +237,46 @@
             line-height: 1.5;
             margin: 0;
             padding: 0;
+        }
+
+        .image-description + .image-description {
+            margin-top: 15px;
+        }
+
+        .image-container {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 250px;
+        }
+
+        .founder-name-below {
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 5px;
+            margin-left: 0px;
+            width: 100%;
+            max-width: 250px;
+            letter-spacing: 2px;
+        }
+
+        .founder-name-below .founder-label {
+            color: black;
+        }
+
+        .founder-name-below .founder-name {
+            color: #FFD700;
         }
 
         /* RESPONSIVE BREAKPOINTS */
@@ -250,10 +316,14 @@
             
             .image-section {
                 padding-left: 20px;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
                 -webkit-align-items: center;
                 -ms-flex-align: center;
                 align-items: center;
                 text-align: center;
+                gap: 15px;
             }
         }
 
@@ -298,6 +368,14 @@
                 padding-left: 15px;
                 margin-top: 15px;
                 margin-bottom: 30px;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-align-items: center;
+                -ms-flex-align: center;
+                align-items: center;
+                text-align: center;
+                gap: 15px;
             }
             
             .content-image {
@@ -358,14 +436,25 @@
 
         <!-- Founder Section -->
         <section class="image-section">
-            <img src="Systems_Image/new_filename.jpg" alt="Elijah Stroman, Founder" class="content-image">
-            <div class="image-text">
-                <h3 class="image-name">
+            <div class="image-container">
+                <img src="Systems_Image/new_filename.jpg" alt="Elijah Stroman, Founder" class="content-image">
+                <div class="founder-name-below">
                     <span class="founder-label">Founder:</span> 
                     <span class="founder-name">Elijah Stroman</span>
-                </h3>
-                <p class="image-description">
-                    Empowering individuals and communities with education, advocacy, and resources for true freedom and equality.
+                </div>
+            </div>
+            <div class="image-text">
+                <p class="story-text">
+                    For the REAL Foundation was forged in the fire of struggle and resolve. Its founder Elijah Stroman—a man of uncommon insight. He spent many years behind bars, doing everything he could to learn and grow. But when freedom came, it came with systems and barriers that felt impossible to navigate. He faced the technical demands of daily life with courage but also deep frustration. Yet he refused to let that stop him.
+                </p>
+                <p class="story-text">
+                    Instead, he transformed his hardship into a mission into turning pain into purpose, building a vision to guide others who, like him, would one day walk out of confinement into a world that too often forgets them. His dream was one of support, clarity, and hope—a path that others could follow without stumbling through the unknown.
+                </p>
+                <p class="story-text">
+                    Tragically, that mission was cut short. A series of events stole his life—but not his vision. From that loss came the birth of For the REAL Foundation. It became a promise kept—for those reentering society, for second chances, for human dignity. <strong><em>United in strength, we rise together.</em></strong> This is more than a slogan; it's our truth. It's a call to action, a bond that ties every learner, teacher, advocate, and fighter who believes in a better way.
+                </p>
+                <p class="story-text">
+                    This foundation is for the real ones—those rebuilding, rewiring, and reclaiming their future.
                 </p>
             </div>
         </section>
