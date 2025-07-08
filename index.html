@@ -192,8 +192,35 @@
         }
 
         .image-text {
-            max-width: 600px;
             flex: 1;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .text-column {
+            flex: 0.8;
+            height: 340px;
+            max-height: 340px;
+            overflow: hidden;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            margin-right: 15px;
+        }
+
+        .text-column:last-child {
+            margin-right: 0;
         }
 
         .story-text {
@@ -202,6 +229,12 @@
             line-height: 1.5;
             margin: 0;
             padding: 0;
+            word-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
+            letter-spacing: 0.2px;
+            text-align: justify;
         }
 
         .story-text + .story-text {
@@ -434,18 +467,39 @@
                 </div>
             </div>
             <div class="image-text">
-                <p class="story-text">
-                    For the REAL Foundation was forged in the fire of struggle and resolve. Its founder Elijah Stroman—a man of uncommon insight. He spent many years behind bars, doing everything he could to learn and grow. But when freedom came, it came with systems and barriers that felt impossible to navigate. He faced the technical demands of daily life with courage but also deep frustration. Yet he refused to let that stop him.
-                </p>
-                <p class="story-text">
-                    Instead, he transformed his hardship into a mission into turning pain into purpose, building a vision to guide others who, like him, would one day walk out of confinement into a world that too often forgets them. His dream was one of support, clarity, and hope—a path that others could follow without stumbling through the unknown.
-                </p>
-                <p class="story-text">
-                    Tragically, that mission was cut short. A series of events stole his life—but not his vision. From that loss came the birth of For the REAL Foundation. It became a promise kept—for those reentering society, for second chances, for human dignity. <strong><em>United in strength, we rise together.</em></strong> This is more than a slogan; it's our truth. It's a call to action, a bond that ties every learner, teacher, advocate, and fighter who believes in a better way.
-                </p>
-                <p class="story-text">
-                    This foundation is for the real ones—those rebuilding, rewiring, and reclaiming their future.
-                </p>
+                <div class="text-column">
+                    <p class="story-text">
+                        For the REAL Foundation was forged in the fire of struggle and resolve. Its founder Elijah Stroman—a man of uncommon insight. He spent many years behind bars, doing everything he could to learn and grow. But when freedom came, it came with systems and barriers that felt impossible to navigate. He faced the technical demands of daily life with courage but also deep frustration. Yet he refused to let that stop him.
+
+Instead, he transformed his hardship into a mission into turning pain into purpose, building a vision to guide others who, like him, would one day walk out of confinement into a world that too often forgets them. His dream was one of support, clarity, and hope—a path that others could follow without stumbling through the unknown.
+
+Tragically, that mission was cut short. A series of events stole his life—but not his vision. From that loss came the birth of For the REAL Foundation. It became a promise kept—for those reentering society, for second chances, for human dignity. United in strength, we rise together. This is more than a slogan; it's our truth. It's a call to action, a bond that ties every learner, teacher, advocate, and fighter who believes in a better way.
+
+This foundation is for the real ones—those rebuilding, rewiring, and reclaiming their future.
+                    </p>
+                </div>
+                <div class="text-column">
+                    <p class="story-text">
+                        For the REAL Foundation was forged in the fire of struggle and resolve. Its founder Elijah Stroman—a man of uncommon insight. He spent many years behind bars, doing everything he could to learn and grow. But when freedom came, it came with systems and barriers that felt impossible to navigate. He faced the technical demands of daily life with courage but also deep frustration. Yet he refused to let that stop him.
+
+Instead, he transformed his hardship into a mission into turning pain into purpose, building a vision to guide others who, like him, would one day walk out of confinement into a world that too often forgets them. His dream was one of support, clarity, and hope—a path that others could follow without stumbling through the unknown.
+
+Tragically, that mission was cut short. A series of events stole his life—but not his vision. From that loss came the birth of For the REAL Foundation. It became a promise kept—for those reentering society, for second chances, for human dignity. United in strength, we rise together. This is more than a slogan; it's our truth. It's a call to action, a bond that ties every learner, teacher, advocate, and fighter who believes in a better way.
+
+This foundation is for the real ones—those rebuilding, rewiring, and reclaiming their future.
+                    </p>
+                </div>
+                <div class="text-column">
+                    <p class="story-text">
+                        For the REAL Foundation was forged in the fire of struggle and resolve. Its founder Elijah Stroman—a man of uncommon insight. He spent many years behind bars, doing everything he could to learn and grow. But when freedom came, it came with systems and barriers that felt impossible to navigate. He faced the technical demands of daily life with courage but also deep frustration. Yet he refused to let that stop him.
+
+Instead, he transformed his hardship into a mission into turning pain into purpose, building a vision to guide others who, like him, would one day walk out of confinement into a world that too often forgets them. His dream was one of support, clarity, and hope—a path that others could follow without stumbling through the unknown.
+
+Tragically, that mission was cut short. A series of events stole his life—but not his vision. From that loss came the birth of For the REAL Foundation. It became a promise kept—for those reentering society, for second chances, for human dignity. United in strength, we rise together. This is more than a slogan; it's our truth. It's a call to action, a bond that ties every learner, teacher, advocate, and fighter who believes in a better way.
+
+This foundation is for the real ones—those rebuilding, rewiring, and reclaiming their future.
+                    </p>
+                </div>
             </div>
         </section>
     </main>
