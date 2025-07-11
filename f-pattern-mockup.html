@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F-Pattern Mockup - For the Real Foundation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .mockup-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        /* F-Pattern Header (Top Horizontal Bar) */
+        .header-bar {
+            background-color: #228B22;
+            border: 3px solid #FFD700;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background: #FFD700;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #228B22;
+            font-weight: bold;
+        }
+        
+        .title-text {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: black;
+        }
+        
+        .hashtag {
+            color: #FFD700;
+            font-weight: bold;
+        }
+        
+        /* Second Horizontal Bar (Hero/Video Strip) */
+        .hero-strip {
+            background: #228B22;
+            padding: 20px 30px;
+            text-align: center;
+            border-bottom: 2px solid #FFD700;
+        }
+        
+        .video-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #333;
+            border: 2px solid #FFD700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+        }
+        
+        .hero-tagline {
+            color: black;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-top: 15px;
+            font-family: 'Sitka Text', serif;
+        }
+        
+        /* Main F-Pattern Layout */
+        .f-layout {
+            display: flex;
+            min-height: 600px;
+        }
+        
+        /* Left Sidebar (Vertical Scan Area) */
+        .left-sidebar {
+            width: 300px;
+            background: #f8f8f8;
+            border-right: 2px solid #FFD700;
+            padding: 30px 20px;
+            position: sticky;
+            top: 0;
+            height: fit-content;
+        }
+        
+        .founder-card {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border: 2px solid #FFD700;
+            border-radius: 8px;
+        }
+        
+        .founder-image {
+            width: 150px;
+            height: 200px;
+            background: #ddd;
+            margin: 0 auto 15px;
+            border: 2px solid #FFD700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+        
+        .founder-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .founder-title {
+            color: #FFD700;
+            font-weight: bold;
+        }
+        
+        .nav-menu {
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            background: white;
+            border-left: 4px solid #FFD700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .nav-menu li:hover {
+            background: #228B22;
+            color: white;
+        }
+        
+        .quick-stats {
+            margin-top: 30px;
+            padding: 20px;
+            background: #228B22;
+            color: white;
+            border-radius: 8px;
+        }
+        
+        .stat-item {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        /* Main Content Area (Right Side) */
+        .main-content {
+            flex: 1;
+            padding: 30px;
+        }
+        
+        .content-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 2em;
+            color: #228B22;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 10px;
+        }
+        
+        .story-content {
+            line-height: 1.8;
+            font-size: 1em;
+            text-align: justify;
+            columns: 2;
+            column-gap: 30px;
+            column-rule: 1px solid #ddd;
+        }
+        
+        .slogan {
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #228B22;
+            background: #FFD700;
+            padding: 5px 10px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        
+        .mission-highlight {
+            background: #f0f8f0;
+            border-left: 5px solid #228B22;
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+        }
+        
+        .decorative-image {
+            float: right;
+            width: 300px;
+            height: 200px;
+            background: #ddd;
+            margin: 0 0 20px 20px;
+            border: 2px solid #FFD700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+        
+        /* F-Pattern Visual Guide (for demonstration) */
+        .f-pattern-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .f-line {
+            position: absolute;
+            background: rgba(255, 0, 0, 0.3);
+        }
+        
+        .f-line.horizontal-1 {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+        }
+        
+        .f-line.horizontal-2 {
+            top: 250px;
+            left: 0;
+            width: 70%;
+            height: 60px;
+        }
+        
+        .f-line.vertical {
+            top: 80px;
+            left: 0;
+            width: 350px;
+            height: 100%;
+        }
+        
+        .toggle-overlay {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #228B22;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .mockup-label {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            background: rgba(255, 215, 0, 0.9);
+            color: #228B22;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            transform: translateY(-50%);
+            z-index: 1001;
+            max-width: 200px;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .f-layout {
+                flex-direction: column;
+            }
+            
+            .left-sidebar {
+                width: 100%;
+                position: relative;
+            }
+            
+            .story-content {
+                columns: 1;
+            }
+            
+            .decorative-image {
+                float: none;
+                width: 100%;
+                margin: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- F-Pattern Overlay (Toggle with button) -->
+    <div class="f-pattern-overlay" id="overlay" style="display: none;">
+        <div class="f-line horizontal-1"></div>
+        <div class="f-line horizontal-2"></div>
+        <div class="f-line vertical"></div>
+    </div>
+    
+    <button class="toggle-overlay" onclick="toggleOverlay()">Toggle F-Pattern</button>
+    
+    <div class="mockup-label">
+        F-PATTERN MOCKUP<br>
+        <small>Your content redesigned</small>
+    </div>
+    
+    <div class="mockup-container">
+        <!-- F-Pattern Header (First Horizontal Bar) -->
+        <header class="header-bar">
+            <div class="logo-section">
+                <div class="logo-placeholder">REAL</div>
+                <div>
+                    <div class="title-text">For the Real Foundation</div>
+                    <div class="hashtag">#FORTHEREAL</div>
+                </div>
+            </div>
+            <nav>
+                <span style="margin-right: 20px;">About</span>
+                <span style="margin-right: 20px;">Mission</span>
+                <span>Contact</span>
+            </nav>
+        </header>
+        
+        <!-- Second Horizontal Bar (Hero Strip) -->
+        <section class="hero-strip">
+            <div class="video-placeholder">
+                🎥 Your Foundation Video Here
+            </div>
+            <div class="hero-tagline">United in strength we rise together</div>
+        </section>
+        
+        <!-- Main F-Layout -->
+        <div class="f-layout">
+            <!-- Left Sidebar (Vertical Scan) -->
+            <aside class="left-sidebar">
+                <div class="founder-card">
+                    <div class="founder-image">Founder Photo</div>
+                    <div class="founder-name">Elijah Stroman</div>
+                    <div class="founder-title">Founder</div>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li>🏠 Our Story</li>
+                    <li>🎯 Mission</li>
+                    <li>👥 Community</li>
+                    <li>📚 Resources</li>
+                    <li>🤝 Get Involved</li>
+                    <li>📞 Contact</li>
+                </ul>
+                
+                <div class="quick-stats">
+                    <h4 style="margin-bottom: 15px; color: #FFD700;">Quick Stats</h4>
+                    <div class="stat-item">
+                        <span>People Helped:</span>
+                        <strong>500+</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Programs:</span>
+                        <strong>12</strong>
+                    </div>
+                    <div class="stat-item">
+                        <span>Partners:</span>
+                        <strong>25</strong>
+                    </div>
+                </div>
+            </aside>
+            
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <section class="content-section">
+                    <h2 class="section-title">Our Foundation Story</h2>
+                    
+                    <div class="decorative-image">Support Image</div>
+                    
+                    <div class="story-content">
+                        <p>For the REAL Foundation was forged in the fire of struggle and resolve. Its founder Elijah Stroman—a man of uncommon insight. He spent many years behind bars, doing everything he could to learn and grow. But when freedom came, it came with systems and barriers that felt impossible to navigate.</p>
+                        
+                        <p>He faced the technical demands of daily life with courage but also deep frustration. Yet he refused to let that stop him. Instead, he transformed his hardship into a mission, turning pain to purpose, building a vision to guide others who, like him, would one day walk out of confinement into a world that too often forgets them.</p>
+                        
+                        <div class="mission-highlight">
+                            <span class="slogan">United in strength, we rise together.</span>
+                            This is more than a slogan; it's our truth. It's a call to action, a bond that ties every learner, teacher, advocate, and fighter who believes in a better way.
+                        </div>
+                        
+                        <p>His dream was one of support, clarity, and hope—a path that others could follow without stumbling through the unknown. Tragically, that mission was cut short. A series of events stole his life—but not his vision.</p>
+                        
+                        <p>From that loss came the birth of For the REAL Foundation. It became a promise kept—for those reentering society, for second chances, for human dignity. This foundation is for the real ones—those rebuilding, rewiring, and reclaiming their future.</p>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2 class="section-title">Our Mission</h2>
+                    <p style="font-size: 1.1em; line-height: 1.8;">We provide comprehensive support, education, and advocacy for individuals reentering society after incarceration. Our programs focus on practical skills, emotional support, and community integration.</p>
+                </section>
+                
+                <section class="content-section">
+                    <h2 class="section-title">Get Involved</h2>
+                    <p style="font-size: 1.1em; line-height: 1.8;">Join our mission to create real change. Whether through volunteering, donations, or spreading awareness, every action helps build a stronger, more inclusive community.</p>
+                </section>
+            </main>
+        </div>
+    </div>
+    
+    <script>
+        function toggleOverlay() {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = overlay.style.display === 'none' ? 'block' : 'none';
+        }
+        
+        // Auto-show overlay for 3 seconds on load
+        window.onload = function() {
+            const overlay = document.getElementById('overlay');
+            overlay.style.display = 'block';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
