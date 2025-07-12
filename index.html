@@ -373,6 +373,10 @@
             font-style: italic;
             font-size: 1.1em;
             position: relative;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
         
         .mission-highlight .decorative-image {
@@ -381,6 +385,23 @@
             height: auto;
             max-width: 150px;
             margin: 0 0 10px 15px;
+        }
+        
+        .mission-image {
+            width: 250px;
+            height: auto;
+            max-width: 250px;
+            max-height: 180px;
+            margin: 0;
+            border-radius: 8px;
+            -o-object-fit: contain;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        
+        .mission-text {
+            flex: 1;
+            line-height: 1.6;
         }
         
         /* RESPONSIVE BREAKPOINTS */
@@ -473,6 +494,14 @@
                 margin: 15px auto;
                 display: block;
             }
+            
+            .mission-image {
+                float: none;
+                width: 100%;
+                max-width: 180px;
+                margin: 10px auto;
+                display: block;
+            }
         }
         
         @media screen and (max-width: 480px) {
@@ -524,6 +553,12 @@
                 width: 100%;
                 max-width: 250px;
                 margin: 10px auto;
+            }
+            
+            .mission-image {
+                width: 100%;
+                max-width: 160px;
+                margin: 8px auto;
             }
             
             .story-column {
@@ -627,8 +662,11 @@
                         </div>
                         
                         <div class="mission-highlight">
-                            <span class="slogan">United in strength, we rise together.</span>
-                            This is more than a slogan; it's our truth. It's a call to action, a bond that ties every learner, teacher, advocate, and fighter who believes in a better way.
+                            <img src="Systems_Image/Logo/CurricImage.png" alt="Foundation Logo" class="mission-image">
+                            <div class="mission-text">
+                                <span class="slogan">United in strength, we rise together.</span>
+                                This is more than a slogan; it's our truth. It's a call to action, a bond that ties every learner, teacher, advocate, and fighter who believes in a better way.
+                            </div>
                         </div>
                     </div>
                 </section>
