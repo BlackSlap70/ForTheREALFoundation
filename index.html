@@ -291,7 +291,7 @@
         /* Main Content Area */
         .main-content {
             flex: 1;
-            padding: 35px;
+            padding: 35px 35px 35px 10px;
             background: #228B22;
         }
         
@@ -367,7 +367,7 @@
             background: rgba(255, 215, 0, 0.1);
             border: 2px solid #FFD700;
             border-radius: 10px;
-            padding: 20px;
+            padding: 20px 20px 20px -5px;
             margin: 25px 0;
             color: black;
             font-style: italic;
@@ -375,8 +375,9 @@
             position: relative;
             min-height: 200px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 20px;
+            overflow: hidden;
         }
         
         .mission-highlight .decorative-image {
@@ -388,11 +389,12 @@
         }
         
         .mission-image {
-            width: 250px;
+            width: 330px;
             height: auto;
-            max-width: 250px;
-            max-height: 180px;
+            max-width: 330px;
+            max-height: 240px;
             margin: 0;
+            margin-left: -43.5px;
             border-radius: 8px;
             -o-object-fit: contain;
             object-fit: contain;
@@ -401,6 +403,18 @@
         
         .mission-text {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%;
+            min-height: 200px;
+        }
+        
+        .mission-content {
+            margin-top: 15px;
+            margin-left: -10px;
             line-height: 1.6;
         }
         
@@ -498,7 +512,7 @@
             .mission-image {
                 float: none;
                 width: 100%;
-                max-width: 180px;
+                max-width: 240px;
                 margin: 10px auto;
                 display: block;
             }
@@ -557,7 +571,7 @@
             
             .mission-image {
                 width: 100%;
-                max-width: 160px;
+                max-width: 210px;
                 margin: 8px auto;
             }
             
@@ -665,7 +679,9 @@
                             <img src="Systems_Image/Logo/CurricImage.png" alt="Foundation Logo" class="mission-image">
                             <div class="mission-text">
                                 <span class="slogan">United in strength, we rise together.</span>
-                                This is more than a slogan; it's our truth. It's a call to action, a bond that ties every learner, teacher, advocate, and fighter who believes in a better way.
+                                <div class="mission-content">
+                                    This is more than a slogan; it's our truth. It's a call to action, a bond that ties every learner, teacher, advocate, and fighter who believes in a better way.
+                                </div>
                             </div>
                         </div>
                     </div>
