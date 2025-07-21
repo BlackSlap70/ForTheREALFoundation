@@ -93,8 +93,8 @@
         }
         
         .header-logo {
-            width: 90px;
-            height: 90px;
+            width: 187px;
+            height: 187px;
             -o-object-fit: cover;
             object-fit: cover;
             border: 2px solid #FFD700;
@@ -102,6 +102,26 @@
             padding: 0;
             margin: 0;
             display: block;
+        }
+        .header-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header-profile-info {
+            margin-top: 8px;
+            text-align: center;
+        }
+        .header-profile-name {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: black;
+        }
+        .header-profile-title {
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 1em;
+            letter-spacing: 1px;
         }
         
         .title-section {
@@ -653,7 +673,9 @@
         <!-- F-Pattern Header (Top Horizontal Bar) -->
         <header class="header-bar">
             <div class="logo-section">
-                <img src="Systems_Image/pexels-photo-3184438.jpeg" alt="For the Real Foundation Logo" class="header-logo">
+                <div class="header-profile">
+                    <img src="Systems_Image/new_filename.jpg" alt="Elijah Stroman, Founder" class="header-logo">
+                </div>
                 <div class="title-section">
                     <div class="header-title">For the Real Foundation</div>
                     <div class="header-hashtag">#FORTHEREAL</div>
@@ -680,11 +702,7 @@
             <!-- Left Sidebar (Vertical Scan Area) -->
             <aside class="left-sidebar">
                 <div class="founder-card">
-                    <img src="Systems_Image/new_filename.jpg" alt="Elijah Stroman, Founder" class="founder-image">
-                    <div class="founder-info">
-                        <div class="founder-name">Elijah Stroman</div>
-                        <div class="founder-title">Founder</div>
-                    </div>
+                    <img src="Systems_Image/Logo/CurricImage.png?v=20250714" alt="For the Real Foundation Logo" class="founder-image">
                 </div>
                 
                 <nav class="sidebar-nav">
@@ -744,7 +762,7 @@
                     </div>
                         
                         <div class="mission-highlight">
-                            <img src="Systems_Image/Logo/CurricImage.png?v=20250714" alt="Foundation Logo" class="mission-image">
+                            <img src="Systems_Image/pexels-photo-3184438.jpeg" alt="Foundation Logo" class="mission-image">
                             <div class="mission-text">
                                 <span class="slogan">United in strength, we rise together.</span>
                                 <div class="mission-content">
