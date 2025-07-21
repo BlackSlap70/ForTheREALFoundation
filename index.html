@@ -8,8 +8,8 @@
     <meta name="description" content="For the Real Foundation - Empowering communities through education and advocacy">
     <title>For the Real Foundation - Elijah Stroman</title>
     
-    <!-- Force GitHub Pages Update - July 15, 2025 -->
-    <!-- Cache Buster: 1721073600 -->
+    <!-- Force GitHub Pages Update - July 16, 2025 -->
+    <!-- Cache Buster: 1721170000 -->
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -320,15 +320,11 @@
         }
         
         .story-columns {
-            display: -webkit-flex;
-            display: -ms-flexbox;
             display: flex;
-            gap: 25px;
-            margin-top: 15px;
+            gap: 0;
+            margin-top: 0;
             align-items: stretch;
-            min-height: 400px;
         }
-        
         .story-column {
             flex: 1;
             color: black;
@@ -337,22 +333,22 @@
             text-align: justify;
             word-wrap: break-word;
             -webkit-hyphens: auto;
-            -ms-hyphens: auto;
             hyphens: auto;
+            padding: 0 5px;
+            min-width: 0;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            width: 50%;
         }
         
         .decorative-image {
             float: right;
-            width: 350px;
+            width: 300px;
             height: auto;
-            max-width: 350px;
+            max-width: 300px;
             -o-object-fit: contain;
             object-fit: contain;
-            margin: 0 0 20px 20px;
+            margin: 0 0 20px 15px;
             border-radius: 10px;
         }
         
@@ -426,6 +422,65 @@
             font-size: 1.1em;
             line-height: 1.8;
             color: black;
+        }
+        
+        .story-teaser {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .story-teaser .read-more-btn {
+            margin-top: 15px;
+            display: block;
+            text-align: center;
+        }
+        
+        .story-intro {
+            margin-bottom: 20px;
+        }
+        
+        .story-intro .story-teaser {
+            max-height: none;
+            overflow: visible;
+            padding-bottom: 0;
+        }
+        
+        .story-intro .read-more-btn {
+            margin-top: 15px;
+        }
+        
+        .story-teaser p {
+            margin-bottom: 0.5em;
+        }
+        
+        .story-teaser .read-more-btn {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .story-full {
+            display: none;
+        }
+        
+        .read-more-btn {
+            color: #FFD700;
+            background: none;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.9em;
+            text-decoration: underline;
+            margin-top: 5px;
+            padding: 0;
+        }
+        
+        .read-more-btn:hover {
+            color: #FFA500;
+        }
+        
+        .show-less-btn {
+            margin-top: 15px;
         }
         
         /* RESPONSIVE BREAKPOINTS */
@@ -668,22 +723,25 @@
             <main class="main-content">
                 <section id="story" class="content-section">
                     <h2 class="section-title">Our Foundation Story</h2>
-                    
                     <img src="Systems_Image/pexels-anntarazevich-5598293.jpg" alt="Community support" class="decorative-image">
-                    
                     <div class="story-content">
-                        <div class="story-columns">
-                            <div class="story-column">
-                                <p>For the REAL Foundation was forged in the fire of struggle and resolve. Its founder Elijah Stroman—a man of uncommon insight. He spent many years behind bars, doing everything he could to learn and grow. But when freedom came, it came with systems and barriers that felt impossible to navigate.</p>
-                                
-                                <p>He faced the technical demands of daily life with courage but also deep frustration. Yet he refused to let that stop him. Instead, he transformed his hardship into a mission, turning pain to purpose, building a vision to guide others who, like him, would one day walk out of confinement into a world that too often forgets them.</p>
-                            </div>
-                            <div class="story-column">
-                                <p>His dream was one of support, clarity, and hope—a path that others could follow without stumbling through the unknown. Tragically, that mission was cut short. A series of events stole his life—but not his vision.</p>
-                                
-                                <p>From that loss came the birth of For the REAL Foundation. It became a promise kept—for those reentering society, for second chances, for human dignity. This foundation is for the real ones—those rebuilding, rewiring, and reclaiming their future. We stand as a beacon of hope, providing the tools, support, and community needed to transform lives and break the cycle of recidivism.</p>
+                        <div id="story-preview" class="story-teaser">
+                            <div class="story-columns">
+                                <div class="story-column">
+                                    <p>For the REAL Foundation was born from the fire of struggle and forged by unwavering resolve. Its founder, Elijah Stroman, was a man of rare insight. During his years behind bars, he committed himself to growth and learning. But when he was released, he faced a world tangled in systems and obstacles that seemed insurmountable. He met the technical demands of daily life with courage—but also deep frustration.</p>
+                                </div>
+                                <div class="story-column">
+                                    <p>Still, he pressed forward. Rather than let that hardship defeat him, Elijah transformed his pain into purpose. He envisioned a path for others like him—people who would one day step out of confinement into a society that all too often overlooks their potential. His mission was rooted in support, clarity, and hope—a guide to help others move forward without stumbling through the unknown. That mission was tragically interrupted. A series of events took Elijah’s life, but not the vision he left behind.<button class="read-more-btn" onclick="toggleFullStory()">(read more...)</button></p>
+                                </div>
                             </div>
                         </div>
+                        <div id="story-full" class="story-full" style="display:none;">
+                            <div class="story-full-text">
+                                <p>From that loss came the birth of For the REAL Foundation—a promise renewed for those reentering society, for second chances, for human dignity. <b>United in strength, we rise together</b> is more than a slogan—it’s a truth we live by. It’s a rallying cry, a powerful thread that connects every learner, teacher, advocate, and fighter committed to a better way. This foundation is for the real ones—the rebuilders, the rewriters, the reclaimers of futures.</p>
+                                <button class="read-more-btn show-less-btn" onclick="toggleFullStory()">show less</button>
+                            </div>
+                        </div>
+                    </div>
                         
                         <div class="mission-highlight">
                             <img src="Systems_Image/Logo/CurricImage.png?v=20250714" alt="Foundation Logo" class="mission-image">
@@ -710,5 +768,24 @@
             </main>
         </div>
     </div>
+    
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // No dynamic JS needed for preview/full text anymore
+    // Just toggle visibility
+});
+
+function toggleFullStory() {
+    const teaser = document.getElementById('story-preview');
+    const fullStory = document.getElementById('story-full');
+    if (fullStory.style.display === 'none' || fullStory.style.display === '') {
+        teaser.style.display = 'none';
+        fullStory.style.display = 'block';
+    } else {
+        teaser.style.display = 'flex';
+        fullStory.style.display = 'none';
+    }
+}
+    </script>
 </body>
 </html>
