@@ -370,6 +370,12 @@
             object-fit: contain;
             margin: 0 0 20px 15px;
             border-radius: 10px;
+            cursor: pointer;
+            transition: box-shadow 0.2s;
+        }
+
+        .decorative-image:hover, .decorative-image:focus {
+            box-shadow: 0 0 0 3px #FFD700;
         }
         
         .slogan {
@@ -665,6 +671,11 @@
                 line-height: 1.4;
             }
         }
+
+        /* Additional style for scroll margin */
+        #programs-resources {
+          scroll-margin-top: 100px; /* adjust to your header height */
+        }
     </style>
 </head>
 
@@ -741,7 +752,9 @@
             <main class="main-content">
                 <section id="story" class="content-section">
                     <h2 class="section-title">Our Foundation Story</h2>
-                    <img src="Systems_Image/pexels-anntarazevich-5598293.jpg" alt="Community support" class="decorative-image">
+                    <a href="#programs-resources">
+                        <img src="Systems_Image/pexels-anntarazevich-5598293.jpg" alt="decorative art" class="decorative-image">
+                    </a>
                     <div class="story-content">
                         <div id="story-preview" class="story-teaser">
                             <div class="story-columns">
@@ -775,9 +788,15 @@
                 
                 <section id="mission" class="content-section">
                     <h2 class="section-title">Our Mission</h2>
-                    <p class="section-content">FREE the REAL Foundation is committed to transforming the lives of incarcerated individuals by equipping them with real-world life skills, educational tools, and personal development strategies for successful reintegration into society. We honor the legacy of Elijah Stroman by fostering empowerment, integrity, inclusion, and transformation within correctional environments and beyond.</p>
-                    <p class="section-content">We provide comprehensive support, education, and advocacy for individuals reentering society after incarceration. Our programs focus on practical skills, emotional support, and community integration to ensure successful transitions and reduced recidivism.</p>
+                    <div class="mission-image-wrap">
+                        <div>
+                            <p class="section-content">FREE the REAL Foundation is committed to transforming the lives of incarcerated individuals by equipping them with real-world life skills, educational tools, and personal development strategies for successful reintegration into society. We honor the legacy of Elijah Stroman by fostering empowerment, integrity, inclusion, and transformation within correctional environments and beyond.</p>
+                            <p class="section-content">We provide comprehensive support, education, and advocacy for individuals reentering society after incarceration. Our programs focus on practical skills, emotional support, and community integration to ensure successful transitions and reduced recidivism.</p>
+                        </div>
+                    </div>
                 </section>
+                <div id="programs-resources"></div>
+                <h2>About us</h2>
                 
                 <section id="involved" class="content-section">
                     <h2 class="section-title">Get Involved</h2>
