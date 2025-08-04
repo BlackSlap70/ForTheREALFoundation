@@ -370,6 +370,12 @@
             object-fit: contain;
             margin: 0 0 20px 15px;
             border-radius: 10px;
+            cursor: pointer;
+            transition: box-shadow 0.2s;
+        }
+
+        .decorative-image:hover, .decorative-image:focus {
+            box-shadow: 0 0 0 3px #FFD700;
         }
         
         .slogan {
@@ -665,6 +671,11 @@
                 line-height: 1.4;
             }
         }
+
+        /* Additional style for scroll margin */
+        #programs-resources {
+          scroll-margin-top: 100px; /* adjust to your header height */
+        }
     </style>
 </head>
 
@@ -741,43 +752,32 @@
             <main class="main-content">
                 <section id="story" class="content-section">
                     <h2 class="section-title">Our Foundation Story</h2>
-                    <img src="Systems_Image/pexels-anntarazevich-5598293.jpg" alt="Community support" class="decorative-image">
-                    <div class="story-content">
-                        <div id="story-preview" class="story-teaser">
-                            <div class="story-columns">
-                                <div class="story-column">
-                                    <p>For the REAL Foundation was born from the fire of struggle and forged by unwavering resolve. Its founder, Elijah Stroman, was a man of rare insight. During his years behind bars, he committed himself to growth and learning. But when he was released, he faced a world tangled in systems and obstacles that seemed insurmountable. He met the technical demands of daily life with courage—but also deep frustration.</p>
-                                </div>
-                                <div class="story-column">
-                                    <p>Still, he pressed forward. Rather than let that hardship defeat him, Elijah transformed his pain into purpose. He envisioned a path for others like him—people who would one day step out of confinement into a society that all too often overlooks their potential. His mission was rooted in support, clarity, and hope—a guide to help others move forward without stumbling through the unknown. That mission was tragically interrupted. A series of events took Elijah’s life, but not the vision he left behind.<button class="read-more-btn" onclick="toggleFullStory()">(read more...)</button></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="story-full" class="story-full" style="display:none;">
-                            <div class="story-full-text">
-                                <p>From that loss came the birth of For the REAL Foundation—a promise renewed for those reentering society, for second chances, for human dignity. <b>United in strength, we rise together</b> is more than a slogan—it’s a truth we live by. It’s a rallying cry, a powerful thread that connects every learner, teacher, advocate, and fighter committed to a better way. This foundation is for the real ones—the rebuilders, the rewriters, the reclaimers of futures.</p>
-                                <button class="read-more-btn show-less-btn" onclick="toggleFullStory()">show less</button>
-                            </div>
-                        </div>
+                    <div class="decorative-image">
+                        <img src="Systems_Image/pexels-anntarazevich-5598293.jpg" alt="decorative art" style="width:100%;height:auto;border-radius:10px;">
                     </div>
-                        
-                        <div class="mission-highlight">
-                            <img src="Systems_Image/pexels-photo-3184438.jpeg" alt="Foundation Logo" class="mission-image">
-                            <div class="mission-text">
-                                <span class="slogan">United in strength, we rise together.</span>
-                                <div class="mission-content">
-                                    This is more than a slogan; it's our truth. It's a call to action, a bond that ties every learner, teacher, advocate, and fighter who believes in a better way.
-                                </div>
-                            </div>
+                    <div class="story-content" style="columns:2; column-gap:30px; column-rule:1px solid #ddd;">
+                        <p>For the REAL Foundation was forged in the fire of struggle and resolve. Its founder Elijah Stroman—a man of uncommon insight. He spent many years behind bars, doing everything he could to learn and grow. But when freedom came, it came with systems and barriers that felt impossible to navigate.</p>
+                        <p>He faced the technical demands of daily life with courage but also deep frustration. Yet he refused to let that stop him. Instead, he transformed his hardship into a mission, turning pain to purpose, building a vision to guide others who, like him, would one day walk out of confinement into a world that too often forgets them.</p>
+                        <div class="mission-highlight" style="background:#f0f8f0; border-left:5px solid #228B22; padding:20px; margin:30px 0; font-style:italic;">
+                            <span class="slogan" style="text-transform:uppercase; font-weight:bold; color:#228B22; background:#FFD700; padding:5px 10px; display:inline-block; margin:10px 0;">United in strength, we rise together.</span>
+                            This is more than a slogan; it's our truth. It's a call to action, a bond that ties every learner, teacher, advocate, and fighter who believes in a better way.
                         </div>
+                        <p>His dream was one of support, clarity, and hope—a path that others could follow without stumbling through the unknown. Tragically, that mission was cut short. A series of events stole his life—but not his vision.</p>
+                        <p>From that loss came the birth of For the REAL Foundation. It became a promise kept—for those reentering society, for second chances, for human dignity. This foundation is for the real ones—those rebuilding, rewiring, and reclaiming their future.</p>
                     </div>
                 </section>
                 
                 <section id="mission" class="content-section">
                     <h2 class="section-title">Our Mission</h2>
-                    <p class="section-content">FREE the REAL Foundation is committed to transforming the lives of incarcerated individuals by equipping them with real-world life skills, educational tools, and personal development strategies for successful reintegration into society. We honor the legacy of Elijah Stroman by fostering empowerment, integrity, inclusion, and transformation within correctional environments and beyond.</p>
-                    <p class="section-content">We provide comprehensive support, education, and advocacy for individuals reentering society after incarceration. Our programs focus on practical skills, emotional support, and community integration to ensure successful transitions and reduced recidivism.</p>
+                    <div class="mission-image-wrap">
+                        <div>
+                            <p class="section-content">FREE the REAL Foundation is committed to transforming the lives of incarcerated individuals by equipping them with real-world life skills, educational tools, and personal development strategies for successful reintegration into society. We honor the legacy of Elijah Stroman by fostering empowerment, integrity, inclusion, and transformation within correctional environments and beyond.</p>
+                            <p class="section-content">We provide comprehensive support, education, and advocacy for individuals reentering society after incarceration. Our programs focus on practical skills, emotional support, and community integration to ensure successful transitions and reduced recidivism.</p>
+                        </div>
+                    </div>
                 </section>
+                <div id="programs-resources"></div>
+                <h2>About us</h2>
                 
                 <section id="involved" class="content-section">
                     <h2 class="section-title">Get Involved</h2>
