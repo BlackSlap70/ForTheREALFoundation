@@ -37,6 +37,16 @@
     <link rel="canonical" href="https://BlackSlap70.github.io/ForTheREALFoundation/">
     
     <style>
+        .mission-image-upper-right {
+            display: block;
+            margin: 0 auto 24px auto;
+            padding: 16px;
+            max-width: 320px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            background: #fff;
+            float: none;
+        }
         /* CSS Reset for Cross-Browser Compatibility */
         * {
             margin: 0;
@@ -394,7 +404,7 @@
             background: rgba(255, 215, 0, 0.1);
             border: 2px solid #FFD700;
             border-radius: 10px;
-            padding: 20px 20px 20px -5px;
+            padding: 20px 20px 20px 0;
             margin: 25px 0;
             color: black;
             font-style: italic;
@@ -509,7 +519,43 @@
         .show-less-btn {
             margin-top: 15px;
         }
-        
+        .our-mission {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+        }
+
+        .wrap-text {
+          max-width: 800px;
+          margin: auto;
+          position: relative;
+          font-size: 1.1em;
+          line-height: 1.8;
+          color: black;
+        }
+
+        .wrap-image {
+          float: left;
+          shape-outside: circle();
+          shape-margin: 10px; /* was 25px, now reduced by 15px */
+          width: 265px;
+          height: 265px;
+          margin: 0 20px 20px 0;
+          border-radius: 50%;
+          object-fit: cover;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        @media (max-width: 600px) {
+          .wrap-image {
+            float: none;
+            display: block;
+            margin: 0 auto 20px auto;
+            shape-outside: none;
+          }
+        }
+
         /* RESPONSIVE BREAKPOINTS */
         
         /* Facebook Mobile Browser Specific Fixes */
@@ -677,6 +723,25 @@
         #programs-resources {
           scroll-margin-top: 100px; /* adjust to your header height */
         }
+        .mission-image-center-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 420px; /* Adjust as needed for your section height */
+            width: 100%;
+            position: relative;
+        }
+        .mission-image-center {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: block;
+        }
+        #mission .mission-image-wrap {
+            margin-top: 0;
+        }
     </style>
 </head>
 
@@ -779,15 +844,25 @@
                 
                 <section id="mission" class="content-section">
                     <h2 class="section-title">Our Mission</h2>
-                    <div class="mission-image-wrap">
-                        <div>
-                            <p class="section-content">FREE the REAL Foundation is committed to transforming the lives of incarcerated individuals by equipping them with real-world life skills, educational tools, and personal development strategies for successful reintegration into society. We honor the legacy of Elijah Stroman by fostering empowerment, integrity, inclusion, and transformation within correctional environments and beyond.</p>
-                            <p class="section-content">We provide comprehensive support, education, and advocacy for individuals reentering society after incarceration. Our programs focus on practical skills, emotional support, and community integration to ensure successful transitions and reduced recidivism.</p>
-                        </div>
-                    </div>
+                    <div class="our-mission">
+    <div class="wrap-text">
+      <img 
+        src="Systems_Image/pexels-polina-kovaleva-8709442.jpg" 
+        alt="stick notes with affirmations" 
+        class="wrap-image"
+      >
+      FREE the REAL Foundation is committed to transforming the lives of incarcerated individuals by equipping them with real-world life skills, educational tools, and personal development strategies for successful reintegration into society. We honor the legacy of Elijah Stroman by fostering empowerment, integrity, inclusion, and transformation within correctional environments and beyond.<br><br>
+      We provide comprehensive support, education, and advocacy for individuals reentering society after incarceration. Our programs focus on practical skills, emotional support, and community integration to ensure successful transitions and reduced recidivism.
+    </div>
+  </div>
                 </section>
                 <div id="programs-resources"></div>
-                <h2>About us</h2>
+                <section id="about" class="""content-section">
+                    <h2 class="section-title">About Us</h2>
+                    <p class="section-content">
+                        For the REAL Foundation is dedicated to empowering individuals impacted by incarceration through education, advocacy, and community support. Our team is passionate about creating opportunities for successful reintegration and lasting change.
+                    </p>
+                </section>
                 
                 <section id="involved" class="content-section">
                     <h2 class="section-title">Get Involved</h2>
