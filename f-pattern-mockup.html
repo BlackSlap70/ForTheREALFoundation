@@ -244,6 +244,7 @@
             height: 100%;
             pointer-events: none;
             z-index: 1000;
+            display: none;
         }
         
         .f-line {
@@ -324,11 +325,11 @@
     </style>
 </head>
 <body>
-    <!-- F-Pattern Overlay (Toggle with button) -->
-    <div class="f-pattern-overlay" id="overlay" style="display: none;">
+    <div class="f-pattern-overlay" id="overlay">
         <div class="f-line horizontal-1"></div>
         <div class="f-line horizontal-2"></div>
         <div class="f-line vertical"></div>
+    </div>
     </div>
     
     <button class="toggle-overlay" onclick="toggleOverlay()">Toggle F-Pattern</button>
