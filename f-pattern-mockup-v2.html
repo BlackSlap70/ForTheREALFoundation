@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup V3 - Free the Real Foundation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #228B22;
+            border: 5px solid #FFD700;
+            min-height: 100vh;
+        }
+
+        /* Fixed Video Header */
+        .video-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 350px;        /* Reduced from 400px to 350px */
+            z-index: 100;
+            overflow: hidden;
+            border-bottom: 3px solid #FFD700;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Founder Overlay - Upper Left */
+        .founder-card {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 300px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #FFD700;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .founder-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #FFD700;
+            display: block;
+            margin: 0 auto 15px auto;
+        }
+
+        .founder-name {
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #228B22;
+            margin-bottom: 5px;
+        }
+
+        .founder-title {
+            text-align: center;
+            color: #FFD700;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .founder-bio {
+            font-size: 0.9em;
+            line-height: 1.4;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Main Content with F-Pattern Layout */
+        .main-content {
+            margin-top: 350px;    /* Reduced from 400px to 350px */
+            background: #228B22;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        /* Left Sidebar */
+        .left-sidebar {
+            width: 350px;
+            background: #f8f8f8;
+            border-right: 2px solid #FFD700;
+            padding: 25px 20px;
+            height: fit-content;
+        }
+
+        .sidebar-founder-card {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border: 2px solid #FFD700;
+            border-radius: 8px;
+        }
+
+        .sidebar-founder-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border: 2px solid #FFD700;
+            border-radius: 8px;
+        }
+
+        .sidebar-founder-name {
+            margin-top: 15px;
+            color: #228B22;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .sidebar-founder-title {
+            color: #FFD700;
+            font-weight: bold;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            margin-bottom: 15px;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 15px 20px;
+            background: white;
+            color: #228B22;
+            text-decoration: none;
+            border: 1px solid #FFD700;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            background: #FFD700;
+            color: white;
+        }
+
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            padding: 35px;
+        }
+
+        .content-section {
+            margin-bottom: 45px;
+        }
+
+        .section-title {
+            font-size: 2.2em;
+            color: #FFD700;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 15px;
+        }
+
+        .section-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: white;
+            text-align: justify;
+        }
+
+        /* Mission Section with Wrap Image */
+        .our-mission {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrap-text {
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: white;
+        }
+
+        .wrap-image {
+            float: left;
+            shape-outside: circle();
+            shape-margin: 30px;
+            width: 250px;
+            height: 250px;
+            margin: 0 30px 30px 0;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        /* Impact Stats */
+        .impact-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+            margin: 10px;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        .stat-label {
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .left-sidebar {
+                width: 100%;
+            }
+
+            .founder-card {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 90%;
+                margin: 20px auto;
+            }
+
+            .video-header {
+                height: 265px;       /* Proportionally reduced for mobile */
+            }
+
+            .main-content {
+                margin-top: 265px;   /* Proportionally reduced for mobile */
+            }
+
+            .wrap-image {
+                float: none;
+                display: block;
+                margin: 0 auto 20px auto;
+                shape-outside: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Fixed Video Header -->
+    <div class="video-header">
+        <video class="hero-video" autoplay muted loop>
+            <source src="Systems_MP4/BKGRDVDO_small.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Founder Overlay -->
+        <div class="founder-card">
+            <img src="Systems_Image/new_filename.jpg" alt="Elijah Stroman" class="founder-image">
+            <div class="founder-name">Elijah Stroman</div>
+            <div class="founder-title">FOUNDER</div>
+            <div class="founder-bio">
+                Turning challenges into purpose. Ensuring no one struggles alone.
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content with F-Pattern Layout -->
+    <div class="main-content">
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <div class="sidebar-founder-card">
+                <img src="Systems_Image/new_filename.jpg" alt="For the Real Foundation Logo" class="sidebar-founder-image">
+                <div class="sidebar-founder-name">Elijah Stroman</div>
+                <div class="sidebar-founder-title">Founder</div>
+            </div>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#mission">Our Mission</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="content-area">
+            <section id="mission" class="content-section">
+                <h2 class="section-title">Our Mission</h2>
+                <div class="our-mission">
+                    <div class="wrap-text">
+                        <img src="Systems_Image/pexels-polina-kovaleva-8709442.jpg" alt="stick notes with affirmations" class="wrap-image">
+                        FREE the REAL Foundation is committed to transforming the lives of incarcerated individuals by equipping them with real-world life skills, educational tools, and personal development strategies for successful reintegration into society. We honor the legacy of Elijah Stroman by fostering empowerment, integrity, inclusion, and transformation within correctional environments and beyond.<br><br>
+                        We provide comprehensive support, education, and advocacy for individuals reentering society after incarceration. Our programs focus on practical skills, emotional support, and community integration to ensure successful transitions and reduced recidivism.
+                    </div>
+                </div>
+            </section>
+
+            <section id="impact" class="content-section">
+                <h2 class="section-title">Our Impact</h2>
+                <div class="impact-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Lives Touched</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Programs</div>
+                    </div>
+                </div>
+                <p class="section-content">
+                    Our comprehensive approach has helped hundreds of individuals successfully reintegrate into their communities, reducing recidivism and building stronger families and neighborhoods.
+                </p>
+            </section>
+
+            <section id="about" class="content-section">
+                <h2 class="section-title">About Elijah Stroman</h2>
+                <p class="section-content">
+                    Elijah Stroman's journey from incarceration to empowerment exemplifies the transformative power of second chances. After experiencing firsthand the challenges of reentry, Elijah dedicated his life to ensuring others wouldn't face those struggles alone. His vision became the foundation for our comprehensive support system that addresses the real-world needs of individuals transitioning back into society.
+                </p>
+            </section>
+
+            <section id="programs" class="content-section">
+                <h2 class="section-title">Programs & Resources</h2>
+                <p class="section-content">
+                    Our programs are designed to address the full spectrum of reentry challenges: from practical skills like job readiness and financial literacy, to emotional support through mentorship and counseling. We believe in treating each individual holistically, recognizing that successful reintegration requires more than just finding employment—it requires rebuilding lives, relationships, and hope.
+                </p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

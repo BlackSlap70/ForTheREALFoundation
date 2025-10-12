@@ -73,6 +73,7 @@
             max-width: 1400px;
             margin: 0 auto;
             background: #228B22;
+            margin-top: 350px; /* Add this to your existing .main-container */
         }
         
         /* F-Pattern Header (Top Horizontal Bar) */
@@ -172,7 +173,7 @@
         }
         
         /* Hero Strip (Second Horizontal Bar) */
-        .hero-strip {
+        /* .hero-strip {
             background: #228B22;
             padding: 15px 25px;
             text-align: center;
@@ -199,8 +200,72 @@
             font-weight: bold;
             text-align: center;
             margin-top: 10px;
-        }
+        } */
         
+        /* NEW: Fixed Video Header */
+        .fixed-video-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 350px;
+            z-index: 100;
+            overflow: hidden;
+            border-bottom: 3px solid #FFD700;
+        }
+
+        .fixed-hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* NEW: Founder Overlay on Video */
+        .video-founder-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 300px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #FFD700;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 101;
+        }
+
+        .video-founder-image {
+            width: 187px;        /* Changed from 120px to match header logo */
+            height: 187px;       /* Changed from 120px to match header logo */
+            border-radius: 8px;  /* Changed from 50% (circular) to 8px (square with rounded corners) */
+            object-fit: cover;
+            border: 3px solid #FFD700;
+            display: block;
+            margin: 0 auto 15px auto;
+        }
+
+        .video-founder-name {
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #228B22;
+            margin-bottom: 5px;
+        }
+
+        .video-founder-title {
+            text-align: center;
+            color: #FFD700;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .video-founder-bio {
+            font-size: 0.9em;
+            line-height: 1.4;
+            color: #333;
+            text-align: center;
+        }
+
         /* Main F-Pattern Layout */
         .f-layout {
             display: block; /* Fallback for older browsers */
@@ -749,8 +814,28 @@
 </head>
 
 <body>
+    <!-- NEW: Fixed Video Header -->
+    <div class="fixed-video-header">
+        <video class="fixed-hero-video" autoplay muted loop>
+            <source src="Systems_MP4/BKGRDVDO_small.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Founder Overlay -->
+        <div class="video-founder-overlay">
+            <img src="Systems_Image/new_filename.jpg" alt="Elijah Stroman" class="video-founder-image">
+            <div class="video-founder-name">Elijah Stroman</div>
+            <div class="video-founder-title">FOUNDER</div>
+            <div class="video-founder-bio">
+                Turning challenges into purpose. Ensuring no one struggles alone.
+            </div>
+        </div>
+    </div>
+
+    <!-- Your existing main-container starts here -->
     <div class="main-container">
         <!-- F-Pattern Header (Top Horizontal Bar) -->
+        <!-- COMMENTED OUT - Original header replaced by fixed video header
         <header class="header-bar">
             <div class="logo-section">
                 <div class="header-profile">
@@ -767,15 +852,7 @@
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
         </header>
-
-        <!-- Hero Strip (Second Horizontal Bar) -->
-        <section class="hero-strip">
-            <video class="hero-video" autoplay muted loop onclick="this.play()" aria-label="Foundation promotional video" controls preload="none">
-                <source src="Systems_MP4/BKGRDVDO_small.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="hero-tagline">United in strength we rise together</div>
-        </section>
+        -->
 
         <!-- Main F-Layout -->
         <div class="f-layout">
