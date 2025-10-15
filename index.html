@@ -4,12 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free the Real Foundation - Elijah Stroman</title>
+    <meta name="description" content="For the REAL Foundation transforms lives through education, support, and resources for successful reintegration into society. Founded by Elijah Stroman.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://blackslap70.github.io/ForTheREALFoundation/">
+    <meta property="og:title" content="Free the Real Foundation - Elijah Stroman">
+    <meta property="og:description" content="Transforming lives through education, support, and resources for successful reintegration into society.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Systems_Image/LeftSideBar.png">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        /* Skip Link for Accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #FFD700;
+            color: #000;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        .skip-link:focus {
+            top: 6px;
         }
 
         body {
@@ -36,6 +63,21 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .video-fallback {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #228B22, #1e7b1e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFD700;
+            font-size: 2em;
+            font-weight: bold;
         }
 
         /* Founder Overlay */
@@ -153,9 +195,10 @@
             transition: all 0.3s ease;
         }
 
-        .nav-menu a:hover {
+        .nav-menu a:hover, .nav-menu a:focus {
             background: #FFD700;
             color: white;
+            outline: 2px solid #fff;
         }
 
         .quick-stats {
@@ -230,16 +273,19 @@
         .social-icons {
             display: flex;
             gap: 20px;
-            font-size: 52px;  /* Changed from 40px to 52px (30% increase) */
+            font-size: 52px;
         }
 
-        .social-icons i {
-            cursor: pointer;
+        .social-icons a {
+            text-decoration: none;
+            color: inherit;
             transition: transform 0.2s;
         }
 
-        .social-icons i:hover {
+        .social-icons a:hover, .social-icons a:focus {
             transform: scale(1.2);
+            outline: 2px solid #FFD700;
+            outline-offset: 4px;
         }
 
         .social-icons .fa-facebook {
@@ -306,6 +352,27 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
+        /* Contact Section */
+        .contact-info {
+            background: rgba(0, 0, 0, 0.2);
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            padding: 25px;
+            color: white;
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item i {
+            color: #FFD700;
+            width: 20px;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .main-content {
@@ -347,7 +414,7 @@
 
             .social-icons {
                 align-self: flex-end;
-                font-size: 46px;  /* Changed from 35px to 46px (30% increase) */
+                font-size: 46px;
                 gap: 15px;
             }
         }
@@ -355,16 +422,18 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Fixed Video Header -->
-    <div class="fixed-video-header">
-        <video class="fixed-hero-video" autoplay muted loop playsinline preload="metadata">
+    <header class="fixed-video-header">
+        <video class="fixed-hero-video" autoplay muted loop playsinline preload="metadata" aria-label="Background video">
             <source src="Systems_MP4/BKGRDVDO_small.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            <div class="video-fallback">For the REAL Foundation</div>
         </video>
 
         <!-- Founder Overlay -->
         <div class="video-founder-overlay">
-            <img src="Systems_Image/new_filename 12.17.50 PM.jpg" alt="Elijah Stroman" class="video-founder-image" 
+            <img src="Systems_Image/new_filename 12.17.50 PM.jpg" alt="Elijah Stroman, Founder" class="video-founder-image" 
                  onerror="this.style.display='none'; console.log('Founder image not found');">
             <div class="video-founder-name">Elijah Stroman</div>
             <div class="video-founder-title">FOUNDER</div>
@@ -372,17 +441,17 @@
                 Turning challenges into purpose. Ensuring no one struggles alone.
             </div>
         </div>
-    </div>
+    </header>
 
-    <!-- Main Content with F-Pattern Layout -->
-    <div class="main-content">
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
         <!-- Left Sidebar -->
         <aside class="left-sidebar">
             <img src="Systems_Image/LeftSideBar.png" alt="For the Real Foundation Logo" class="sidebar-founder-image">
             <div class="sidebar-founder-name">Elijah Stroman</div>
             <div class="sidebar-founder-title">Founder</div>
 
-            <nav>
+            <nav aria-label="Main navigation">
                 <ul class="nav-menu">
                     <li><a href="#story">🏠 Our Foundation Story</a></li>
                     <li><a href="#mission">🎯 Our Mission</a></li>
@@ -416,24 +485,24 @@
 
         <!-- Content Area -->
         <main class="content-area">
-            <section id="story" class="content-section">
+            <article id="story" class="content-section">
                 <div class="section-title-container">
                     <h2 class="section-title">Our Foundation Story</h2>
-                    <div class="social-icons">
-                        <a href="https://facebook.com/ForTheRealFoundation" target="_blank">
-                            <i class="fab fa-facebook"></i>
+                    <div class="social-icons" role="navigation" aria-label="Social media links">
+                        <a href="https://facebook.com/ForTheRealFoundation" target="_blank" aria-label="Visit our Facebook page">
+                            <i class="fab fa-facebook" aria-hidden="true"></i>
                         </a>
-                        <a href="https://instagram.com/ForTheRealFoundation" target="_blank">
-                            <i class="fab fa-instagram"></i>
+                        <a href="https://instagram.com/ForTheRealFoundation" target="_blank" aria-label="Visit our Instagram page">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="https://snapchat.com/add/ForTheRealFoundation" target="_blank">
-                            <i class="fab fa-snapchat"></i>
+                        <a href="https://snapchat.com/add/ForTheRealFoundation" target="_blank" aria-label="Add us on Snapchat">
+                            <i class="fab fa-snapchat" aria-hidden="true"></i>
                         </a>
-                        <a href="https://threads.net/@ForTheRealFoundation" target="_blank">
-                            <i class="fab fa-threads"></i>
+                        <a href="https://threads.net/@ForTheRealFoundation" target="_blank" aria-label="Follow us on Threads">
+                            <i class="fab fa-threads" aria-hidden="true"></i>
                         </a>
-                        <a href="https://tiktok.com/@ForTheRealFoundation" target="_blank">
-                            <i class="fab fa-tiktok"></i>
+                        <a href="https://tiktok.com/@ForTheRealFoundation" target="_blank" aria-label="Follow us on TikTok">
+                            <i class="fab fa-tiktok" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -445,13 +514,13 @@
                         <p>His dream was one of support, clarity, and hope—a path that others could follow without stumbling through the unknown. This foundation is for the real ones—those rebuilding, rewiring, and reclaiming their future.</p>
                     </div>
                 </div>
-            </section>
+            </article>
 
             <section id="mission" class="content-section">
                 <h2 class="section-title">Our Mission</h2>
                 <div class="our-mission">
                     <div class="wrap-text">
-                        <img src="Systems_Image/Sticky@notes.jpg" alt="stick notes with affirmations" class="wrap-image"
+                        <img src="Systems_Image/Sticky@notes.jpg" alt="Motivational sticky notes with positive affirmations" class="wrap-image"
                              onerror="this.style.display='none'; console.log('Mission image not found');">
                         FREE the REAL Foundation is committed to transforming the lives of incarcerated individuals by equipping them with real-world life skills, educational tools, and personal development strategies for successful reintegration into society.
                     </div>
@@ -477,6 +546,28 @@
                 <p class="section-content">
                     Join our mission to create real change. Whether through volunteering, donations, or spreading awareness, every action helps build a stronger, more inclusive community.
                 </p>
+            </section>
+
+            <section id="contact" class="content-section">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>info@fortherealsfoundation.org</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <span>(555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Atlanta, Georgia</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe" aria-hidden="true"></i>
+                        <span>https://blackslap70.github.io/ForTheREALFoundation/</span>
+                    </div>
+                </div>
             </section>
         </main>
     </div>
