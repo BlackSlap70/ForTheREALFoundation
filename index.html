@@ -62,7 +62,7 @@
 
         /* Main Content with F-Pattern Layout */
         .main-content { margin-top: 298px; background: #228B22; min-height: 100vh; display: flex; }
-        .left-sidebar { width: 350px; background: #228B22; border-right: 2px solid #FFD700; padding: 25px 20px; height: fit-content; }
+        .left-sidebar { width: 350px; background: #228B22; border-right: 2px solid #FFD700; padding: 25px 20px; min-height: calc(100vh - 298px); position: relative; }
         .sidebar-logo-card { text-align: center; margin-bottom: 30px; padding: 20px; background: transparent; border: none; border-radius: 8px; }
         .sidebar-logo-image { width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 3px solid #FFD700; box-shadow: 0 4px 15px rgba(0,0,0,0.5); display: block; margin: 0 auto; }
         .sidebar-founder-name { margin-top: 15px; color: #ffffff; font-size: 1.3em; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
@@ -75,7 +75,21 @@
 
         .social-links { display: flex; justify-content: center; gap: 18px; margin-top: 25px; }
         .social-links a { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: #FFD700; color: #228B22; border: 1px solid #FFD700; font-size: 22px; transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease; }
-        .social-links a:hover, .social-links a:focus { transform: translateY(-2px); background: white; color: #228B22; outline: none; }
+                .social-links a:hover, .social-links a:focus { transform: translateY(-2px); background: #FFD700; color: #ffffff; outline: none; }
+
+        .sidebar-image-bottom {
+            position: absolute;
+            bottom: -130px;
+            left: 0;
+            width: 350px;
+            z-index: 50;
+        }
+        .group-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
 
         /* Content Area */
         .content-area { flex: 1; padding: 35px; }
@@ -84,10 +98,14 @@
         .section-content { font-size: 1.1em; line-height: 1.8; color: white; text-align: justify; }
 
         /* Story Section with Social Icons */
-        .section-title-container { position: relative; display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
-        .social-icons { display: flex; gap: 15px; }
-        .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); color: #FFD700; border: 1px solid #FFD700; font-size: 18px; transition: all 0.3s ease; text-decoration: none; }
-        .social-icons a:hover { background: #FFD700; color: #228B22; transform: translateY(-2px); }
+        .section-title-container { position: relative; margin-bottom: 25px; }
+        .social-icons { position: absolute; top: -10px; right: 0; display: flex; gap: 20px; align-items: baseline; font-size: 60px; line-height: 1; }
+        .facebook { color: rgb(24, 119, 242); }
+        .instagram { color: rgb(195, 42, 163); }
+        .snapchat { color: rgb(255, 252, 0); }
+        .threads { color: rgb(0, 0, 0); }
+        .tiktok { color: rgb(238, 29, 82); }
+        .story-title-with-line { font-size: 2.2em; color: #FFD700; margin-bottom: 25px; border-bottom: 3px solid #FFD700; padding-bottom: 15px; width: 100%; }
         .story-columns { display: flex; gap: 30px; }
         .story-column { flex: 1; font-size: 1.1em; line-height: 1.8; color: white; text-align: justify; }
 
@@ -101,6 +119,33 @@
         .stat-item { text-align: center; color: white; margin: 10px; }
         .stat-number { font-size: 3em; font-weight: bold; color: #FFD700; }
         .stat-label { font-size: 1.2em; margin-top: 5px; }
+
+        /* Footer */
+        .site-footer { 
+            background-color: #000000; 
+            width: 100%; 
+            padding: 30px 0; 
+            margin-top: 50px;
+            position: relative;
+        }
+        .footer-content { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 35px; 
+        }
+        .footer-social-icons { 
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex; 
+            gap: 20px; 
+            align-items: center; 
+            font-size: 60px; 
+        }
+        .footer-social-icons .threads { 
+            color: #ffffff; 
+        }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
@@ -121,8 +166,9 @@
 <body>
     <!-- Fixed video header with founder overlay -->
     <header class="video-header" role="banner" aria-label="Hero video">
-        <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" controls>
             <source src="Systems_MP4/BKGRDVDO_small.mp4" type="video/mp4">
+            <source src="Systems_MP4/BKGRDVDO_small.webm" type="video/webm">
             Your browser does not support the video tag.
         </video>
 
@@ -154,70 +200,57 @@
                 </ul>
             </nav>
 
-            <div class="social-links" aria-label="Social media links">
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
-                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
-                    <i class="fab fa-instagram" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.snapchat.com/add/" target="_blank" rel="noopener" aria-label="Snapchat">
-                    <i class="fab fa-snapchat-ghost" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.threads.net/@" target="_blank" rel="noopener" aria-label="Threads">
-                    <i class="fab fa-threads" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.tiktok.com/@" target="_blank" rel="noopener" aria-label="TikTok">
-                    <i class="fab fa-tiktok" aria-hidden="true"></i>
-                </a>
+            <div class="sidebar-image-bottom">
+                <img src="Systems_Image/Group@think.jpg" alt="Group thinking and collaboration" class="group-image">
             </div>
         </aside>
 
         <!-- Content Area -->
         <main class="content-area">
-            <article id="story" class="content-section">
+            <!-- Free the REAL FOUNDATION — Landing content sections -->
+            <section id="foundations-story" aria-labelledby="foundations-story-heading" class="content-section">
                 <div class="section-title-container">
-                    <h2 class="section-title">Our Foundation Story</h2>
+                    <h2 class="section-title story-title-with-line" id="foundations-story-heading">Our Foundation Story</h2>
                     <div class="social-icons" role="navigation" aria-label="Social media links">
-                        <a href="#" onclick="alert('Facebook page coming soon! Check back later.'); return false;" rel="noopener" aria-label="Facebook page coming soon">
-                            <i class="fab fa-facebook" aria-hidden="true"></i>
-                        </a>
-                        <a href="#" onclick="alert('Instagram page coming soon! Check back later.'); return false;" rel="noopener" aria-label="Instagram page coming soon">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                        </a>
-                        <a href="#" onclick="alert('Snapchat page coming soon! Check back later.'); return false;" rel="noopener" aria-label="Snapchat page coming soon">
-                            <i class="fab fa-snapchat" aria-hidden="true"></i>
-                        </a>
-                        <a href="#" onclick="alert('Threads page coming soon! Check back later.'); return false;" rel="noopener" aria-label="Threads page coming soon">
-                            <i class="fab fa-threads" aria-hidden="true"></i>
-                        </a>
-                        <a href="#" onclick="alert('TikTok page coming soon! Check back later.'); return false;" rel="noopener" aria-label="TikTok page coming soon">
-                            <i class="fab fa-tiktok" aria-hidden="true"></i>
-                        </a>
+                        <i class="fab fa-facebook facebook" aria-hidden="true"></i>
+                        <i class="fab fa-instagram instagram" aria-hidden="true"></i>
+                        <i class="fab fa-snapchat snapchat" aria-hidden="true"></i>
+                        <i class="fab fa-threads threads" aria-hidden="true"></i>
+                        <i class="fab fa-tiktok tiktok" aria-hidden="true"></i>
                     </div>
                 </div>
-                <div class="story-columns">
-                    <div class="story-column">
-                        <p>FreeTheRealFoundation was forged in the fire of struggle and resolve. Its founder, Elijah Stroman, was a man of uncommon insight. He spent many years behind bars, doing everything he could to learn and grow. But when freedom came, it came with systems and barriers that felt impossible to navigate.</p>
-                    </div>
-                    <div class="story-column">
-                        <p>His dream was one of support, clarity, and hope—a path that others could follow without stumbling through the unknown. This foundation is for the real ones—those rebuilding, rewiring, and reclaiming their future.</p>
-                    </div>
+                <div class="story-content">
+                    <img src="Systems_Image/Open@New.jpg" alt="New opportunities and fresh starts" style="float: right; width: 300px; height: 200px; object-fit: cover; margin: 0 0 20px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                    <p class="section-content">
+                        Free the REAL FOUNDATION was forged in the fire of struggle and resolve. Our work began when Elijah Stroman
+                        walked out of prison after 24 years and found a world he could not recognize. The systems that decide so much
+                        of daily life — housing, work, banking, benefits, communication — had become driven by software, interfaces,
+                        and processes that Elijah had almost no opportunity to learn inside. He left prison with only the basic,
+                        brittle computer skills the system allowed, then stepped into a society run by programs he had never seen.
+                    </p>
+                    <p class="section-content">
+                        Less than six months later Elijah died. His final months were defined not only by the stigma of incarceration
+                        but by repeated, exhausting clashes with invisible technical barriers that blocked his path to stability.
+                        Those barriers cost him time, peace, dignity, and ultimately a life that deserved better. Elijah's experience
+                        became a call to action we could not ignore.
+                    </p>
                 </div>
-            </article>
+            </section>
 
-            <section id="mission" class="content-section">
-                <h2 class="section-title">Our Mission</h2>
+            <section id="mission" aria-labelledby="mission-heading" class="content-section">
+                <h2 class="section-title" id="mission-heading">Our Mission</h2>
                 <div class="our-mission">
                     <div class="wrap-text">
-                        FreeTheRealFoundation is committed to transforming the lives of incarcerated individuals by equipping them with real-world life skills, educational tools, and personal development strategies for successful reintegration into society. We honor the legacy of Elijah Stroman by fostering empowerment, integrity, inclusion, and transformation within correctional environments and beyond.<br><br>
-                        We provide comprehensive support, education, and advocacy for individuals reentering society after incarceration. Our programs focus on practical skills, emotional support, and community integration to ensure successful transitions and reduced recidivism.
+                        <img src="Systems_Image/unity@img.jpeg" alt="Unity and community support" class="wrap-image">
+                        Free the REAL FOUNDATION provides structured, practical guidance that helps people who have been incarcerated
+                        a decade or longer reclaim their place in a digital society. We teach the technical fluency and systems
+                        navigation skills modern life demands so returning citizens do not have to trade dignity for survival.
                     </div>
                 </div>
             </section>
 
-            <section id="impact" class="content-section">
-                <h2 class="section-title">Our Impact</h2>
+            <section id="impact" aria-labelledby="impact-heading" class="content-section">
+                <h2 class="section-title" id="impact-heading">Our Impact</h2>
                 <div class="impact-stats">
                     <div class="stat-item">
                         <div class="stat-number">500+</div>
@@ -233,37 +266,104 @@
                     </div>
                 </div>
                 <p class="section-content">
-                    Our comprehensive approach has helped hundreds of individuals successfully reintegrate into their communities, reducing recidivism and building stronger families and neighborhoods.
+                    We restore agency by translating opaque technologies into repeatable, teachable steps. Our curriculum and
+                    navigation services shorten the time it takes to secure housing, benefits, work, and medical care. We reduce
+                    frustration, lower barriers to opportunity, and help people move from crisis to stability.
+                </p>
+                <p class="section-content">
+                    The difference is decisive: a working email, a verified ID, a direct-deposit setup, or a completed benefits
+                    application can be the pivot between homelessness and housing, unemployment and a job, uncertainty and dignity.
                 </p>
             </section>
 
-            <section id="about" class="content-section">
-                <h2 class="section-title">About Elijah Stroman</h2>
+            <section id="about-elijah" aria-labelledby="about-elijah-heading" class="content-section">
+                <h2 class="section-title" id="about-elijah-heading">About Elijah</h2>
                 <p class="section-content">
-                    Elijah Stroman's journey from incarceration to empowerment exemplifies the transformative power of second chances. After experiencing firsthand the challenges of reentry, Elijah dedicated his life to ensuring others wouldn't face those struggles alone. His vision became the foundation for our comprehensive support system that addresses the real-world needs of individuals transitioning back into society.
+                    Elijah Stroman spent 24 years incarcerated, using every possible moment to learn and grow within the strict
+                    limits of prison access. When he came home, the world had been reshaped by automated systems and digital gates
+                    he had not seen. The frustration and helplessness he felt while navigating those systems became the spark for
+                    Free the REAL FOUNDATION. Elijah's dignity, insight, and unfinished dream guide our work.
                 </p>
             </section>
 
-            <section id="programs" class="content-section">
-                <h2 class="section-title">Programs & Resources</h2>
+            <section id="programs-resources" aria-labelledby="programs-resources-heading" class="content-section">
+                <h2 class="section-title" id="programs-resources-heading">Programs & Resources</h2>
+
+                <article id="curriculum" aria-labelledby="curriculum-heading">
+                    <h3 id="curriculum-heading" style="color: #FFD700; font-size: 1.5em; margin-bottom: 15px;">System Integration Curriculum</h3>
+                    <p class="section-content">
+                        A repeatable, classroom-ready curriculum that breaks complex systems into small actionable steps. Modules
+                        include creating and protecting email, setting up direct deposit, applying for state IDs, understanding
+                        credit basics, navigating job portals, and using public benefits sites.
+                    </p>
+                </article>
+
+                <article id="workshops" aria-labelledby="workshops-heading">
+                    <h3 id="workshops-heading" style="color: #FFD700; font-size: 1.5em; margin-bottom: 15px;">Hands-On Workshops</h3>
+                    <p class="section-content">
+                        Low-stress, device-forward sessions that combine repetition, real interfaces, and patient instruction so
+                        learning sticks. Workshops are taught in community spaces, reentry centers, shelters, and partner sites.
+                    </p>
+                </article>
+
+                <article id="navigation" aria-labelledby="navigation-heading">
+                    <h3 id="navigation-heading" style="color: #FFD700; font-size: 1.5em; margin-bottom: 15px;">One-on-One Navigation Support</h3>
+                    <p class="section-content">
+                        Mentors and navigators sit side-by-side with participants to complete forms, calls, and verification flows
+                        until independence is achieved. This reduces trauma, speeds outcomes, and preserves dignity.
+                    </p>
+                </article>
+
+                <article id="partnerships" aria-labelledby="partnerships-heading">
+                    <h3 id="partnerships-heading" style="color: #FFD700; font-size: 1.5em; margin-bottom: 15px;">Community Partnerships</h3>
+                    <p class="section-content">
+                        We partner with shelters, reentry programs, employers, and legal advocates to ensure training aligns with
+                        real-world barriers and opportunities and to place learners into stable pathways after training.
+                    </p>
+                </article>
+            </section>
+
+            <section id="potential-impact" aria-labelledby="potential-impact-heading" class="content-section">
+                <h2 class="section-title" id="potential-impact-heading">Potential Impact</h2>
                 <p class="section-content">
-                    Our programs are designed to address the full spectrum of reentry challenges: from practical skills like job readiness and financial literacy, to emotional support through mentorship and counseling. We believe in treating each individual holistically, recognizing that successful reintegration requires more than just finding employment—it requires rebuilding lives, relationships, and hope.
+                    Technology should expand opportunity, not gatekeep it. For people returning after long incarceration, the
+                    invisible walls of automated systems are often taller than prejudice or past records. By making systems legible
+                    and teaching durable skills, we reduce recidivism risk, shorten the time to economic stability, and save lives.
+                </p>
+                <p class="section-content">
+                    Every device donated, hour volunteered, or partnership formed multiplies impact: fewer missed benefits,
+                    faster job placements, improved housing retention, and stronger community safety nets.
                 </p>
             </section>
 
-            <section id="contact" class="content-section">
-                <h2 class="section-title">Contact Us</h2>
+            <section id="contact" aria-labelledby="contact-heading" class="content-section">
+                <h2 class="section-title" id="contact-heading">Contact</h2>
                 <p class="section-content">
-                    Have questions or ready to support the mission? Reach out and our team will connect with you.
+                    To volunteer, donate devices, sponsor a workshop, or invite Free the REAL FOUNDATION to your program,
+                    please get in touch. We welcome time, resources, and partnerships that help returning citizens move with
+                    dignity through the systems that shape opportunity.
                 </p>
-                <p class="section-content">
-                    <strong>Email:</strong> info@fortherealfoundation.org<br>
-                    <strong>Phone:</strong> (555) 123-4567<br>
-                    <strong>Location:</strong> Atlanta, Georgia
-                </p>
+                <ul style="color: white; font-size: 1.1em; line-height: 1.8; margin-top: 20px;">
+                    <li><strong>Email:</strong> info@freetheREALfoundation.org</li>
+                    <li><strong>Phone:</strong> (555) 555-0123</li>
+                    <li><strong>Address:</strong> Tacoma, WA (appointments and workshop locations available by request)</li>
+                </ul>
             </section>
         </main>
     </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-social-icons">
+                <i class="fab fa-facebook facebook" aria-hidden="true"></i>
+                <i class="fab fa-instagram instagram" aria-hidden="true"></i>
+                <i class="fab fa-snapchat snapchat" aria-hidden="true"></i>
+                <i class="fab fa-threads threads" aria-hidden="true"></i>
+                <i class="fab fa-tiktok tiktok" aria-hidden="true"></i>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Smooth video loading to prevent poster flash
