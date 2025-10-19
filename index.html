@@ -83,7 +83,6 @@
             letter-spacing: 1px;
             line-height: 1.3;
             -webkit-text-stroke: 2px #FFD700;
-            text-stroke: 2px #FFD700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
@@ -115,6 +114,11 @@
         .content-section { margin-bottom: 45px; }
         .section-title { font-size: 2.2em; color: #FFD700; margin-bottom: 25px; border-bottom: 3px solid #FFD700; padding-bottom: 15px; }
         .section-content { font-size: 1.1em; line-height: 1.8; color: white; text-align: justify; }
+
+        /* Fix inline style warnings */
+        .story-image { float: right; width: 300px; height: 200px; object-fit: cover; margin: 0 0 20px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .program-heading { color: #FFD700; font-size: 1.5em; margin-bottom: 15px; }
+        .impact-list { color: white; font-size: 1.1em; line-height: 1.8; margin-top: 20px; }
 
         /* Story Section with Social Icons */
         .section-title-container { position: relative; margin-bottom: 25px; }
@@ -185,7 +189,7 @@
 <body>
     <!-- Fixed video header with founder overlay -->
     <header class="video-header" role="banner" aria-label="Hero video">
-        <video class="hero-video" autoplay muted loop playsinline preload="auto">
+        <video class="hero-video" autoplay muted loop preload="auto">
             <source src="Systems_MP4/BKGRDVDO_small.mp4" type="video/mp4">
             <source src="Systems_MP4/BKGRDVDO_small.webm" type="video/webm">
             Your browser does not support the video tag.
@@ -235,7 +239,7 @@
                     </div>
                 </div>
                 <div class="story-content">
-                    <img src="Systems_Image/Open@New.jpg" alt="New opportunities and fresh starts" style="float: right; width: 300px; height: 200px; object-fit: cover; margin: 0 0 20px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                    <img src="Systems_Image/Open@New.jpg" alt="New opportunities and fresh starts" class="story-image">
                     <p class="section-content">
                         Free the REAL FOUNDATION was forged in the fire of struggle and resolve. Our work began when Elijah Stroman
                         walked out of prison after 24 years and found a world he could not recognize. The systems that decide so much
@@ -305,7 +309,7 @@
                 <h2 class="section-title" id="programs-resources-heading">Programs & Resources</h2>
 
                 <article id="curriculum" aria-labelledby="curriculum-heading">
-                    <h3 id="curriculum-heading" style="color: #FFD700; font-size: 1.5em; margin-bottom: 15px;">System Integration Curriculum</h3>
+                    <h3 id="curriculum-heading" class="program-heading">System Integration Curriculum</h3>
                     <p class="section-content">
                         A repeatable, classroom-ready curriculum that breaks complex systems into small actionable steps. Modules
                         include creating and protecting email, setting up direct deposit, applying for state IDs, understanding
@@ -314,7 +318,7 @@
                 </article>
 
                 <article id="workshops" aria-labelledby="workshops-heading">
-                    <h3 id="workshops-heading" style="color: #FFD700; font-size: 1.5em; margin-bottom: 15px;">Hands-On Workshops</h3>
+                    <h3 id="workshops-heading" class="program-heading">Hands-On Workshops</h3>
                     <p class="section-content">
                         Low-stress, device-forward sessions that combine repetition, real interfaces, and patient instruction so
                         learning sticks. Workshops are taught in community spaces, reentry centers, shelters, and partner sites.
@@ -322,7 +326,7 @@
                 </article>
 
                 <article id="navigation" aria-labelledby="navigation-heading">
-                    <h3 id="navigation-heading" style="color: #FFD700; font-size: 1.5em; margin-bottom: 15px;">One-on-One Navigation Support</h3>
+                    <h3 id="navigation-heading" class="program-heading">One-on-One Navigation Support</h3>
                     <p class="section-content">
                         Mentors and navigators sit side-by-side with participants to complete forms, calls, and verification flows
                         until independence is achieved. This reduces trauma, speeds outcomes, and preserves dignity.
@@ -330,7 +334,7 @@
                 </article>
 
                 <article id="partnerships" aria-labelledby="partnerships-heading">
-                    <h3 id="partnerships-heading" style="color: #FFD700; font-size: 1.5em; margin-bottom: 15px;">Community Partnerships</h3>
+                    <h3 id="partnerships-heading" class="program-heading">Community Partnerships</h3>
                     <p class="section-content">
                         We partner with shelters, reentry programs, employers, and legal advocates to ensure training aligns with
                         real-world barriers and opportunities and to place learners into stable pathways after training.
@@ -358,7 +362,7 @@
                     please get in touch. We welcome time, resources, and partnerships that help returning citizens move with
                     dignity through the systems that shape opportunity.
                 </p>
-                <ul style="color: white; font-size: 1.1em; line-height: 1.8; margin-top: 20px;">
+                <ul class="impact-list">
                     <li><strong>Email:</strong> info@freetheREALfoundation.org</li>
                     <li><strong>Phone:</strong> (555) 555-0123</li>
                     <li><strong>Address:</strong> Tacoma, WA (appointments and workshop locations available by request)</li>
